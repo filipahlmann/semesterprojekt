@@ -1,0 +1,251 @@
+/* Import font from google */
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Rubik&display=swap');
+
+$bgColor1: black;
+$color1: white;
+$color2: grey;
+
+
+body {
+    background-image: url(../filer/baggrund.png); width: 100%; height: 100%;
+    margin: 0;
+    background-size: cover;
+    background-color: $bgColor1;
+}
+
+
+header {
+    background-color: $bgColor1;
+    display: flex !important;
+    height: 75px;
+    background: rgba(64, 31, 124, 0.3);   
+    align-items: center;
+}
+
+nav {
+    font-family: 'rubik';   
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    li {
+        justify-content: space-around;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    a {
+        padding: 20px 20px;
+        color: $color1;
+        text-decoration: none;
+        &:hover {
+        color: $color2
+        } 
+        font-size: 17px;
+        justify-content: center;
+        text-shadow: 1px 1px #000000;
+    }
+}
+    
+
+#logo {
+    width: 200px;
+    flex-grow: 1;
+    height: 60px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+} 
+
+.logo-container {
+    display: flex;
+    height: 60px;
+    width: 100px;
+    background-image: url(../filer/logo.svg); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    &:hover {
+        opacity: 0.5;
+    }
+} 
+
+#social_link {
+    width:200px;
+    flex-grow: 1;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items:center;
+    i.fa.fa-facebook {
+        color: $color1;
+        font-size: 20px;
+        padding: 0px 10px 0px 0px;
+        &:hover {
+        color: $color2;
+        }
+    }   
+    i.fa.fa-twitter {
+        color: $color1;
+        font-size: 20px;
+        padding: 0px 10px 0px 10px;
+
+        &:hover {
+        color: $color2;
+        }
+    }      
+    i.fa.fa-instagram {
+        color: $color1;
+        font-size: 20px;
+        padding: 0px 0px 0px 10px;
+        &:hover {
+        color: $color2;
+        }
+    }           
+}
+
+main {
+    height: 85vh;
+}
+
+h1 {
+    color: $color1;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 20px;
+    text-shadow: 3px 3px #000000;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg)};
+    to {transform: rotate(360deg)}
+}
+
+
+@for $i from 1 through 8 {
+    #planet#{$i} {
+    animation: spin 50s linear infinite;
+    height: 200px;
+    position: absolute;
+    flex-direction: row;
+        &:hover {
+            opacity: 0.7;
+            transition: 1s linear inherit;
+            height: 215px;
+            
+        }
+    } 
+}
+
+#planet1 {
+    .cls-1{fill:#38B6C6;}
+    .cls-2{fill:#4979BC;}
+}
+#planet2 {
+    .cls-1{fill:#38B6C6;} 
+    .cls-2{fill:#98B2D1;}
+}
+#planet3 {
+    .cls-1{fill:#D4531F;}
+    .cls-2{fill:#E2141E;}
+}
+#planet4 {
+    .cls-1{fill:#CCD9D8;}
+    .cls-2{fill:#98B2D1;}
+}
+#planet5 {
+    .cls-1{fill:#2C4922;}
+    .cls-2{fill:#404A9A;}
+}
+#planet6 {
+    .cls-1{fill:#E5CE6C;}
+    .cls-2{fill:#D0CFBA;}
+}
+#planet7 {
+    .cls-1{fill:#BC7677;}
+    .cls-2{fill:#E08080;}
+}
+#planet8 {
+    .cls-1{fill:#AFAB95;}
+    .cls-2{fill:#D8D3BF;}
+}
+
+$placement-y: (
+"#planet1": 20%,
+"#planet2": 31%,
+"#planet3": 26%,
+"#planet4": 18%,
+"#planet5": 48%,
+"#planet6": 61%,
+"#planet7": 57%,
+"#planet8": 50%,);
+
+@each $item, $percent in $placement-y{
+    #{$item} {
+        top: $percent;
+    }
+}
+
+$placement-x: (
+"#planet1": 18%,
+"#planet2": 36%,
+"#planet3": 52%,
+"#planet4": 67%,
+"#planet5": 20%,
+"#planet6": 35%,
+"#planet7": 51%,
+"#planet8": 67%,);
+
+@each $item, $percent in $placement-x{
+    #{$item} {
+        left: $percent;
+    }
+}
+
+
+#planet-btn {
+    height: 0;
+    width: 0;
+    border: 0;
+    background-color: transparent !important;
+    &:focus {
+    outline: none;}
+}
+
+
+footer {
+    background-color:  $bgColor1;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    color: $color1;
+    background: rgba(64, 31, 124, 0.3);   
+    align-content: flex-end;
+}
+
+#footer_container {
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer_bottom {
+    margin: 50px 0 10px 0;
+    display: flex;
+    width: 90vw;
+    justify-items: center;
+}
+
+#footer_box {
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
